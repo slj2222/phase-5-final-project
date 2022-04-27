@@ -28,10 +28,18 @@ code {
 }
 
 .main-container {
-  
-  
   border: 5px solid rgb(220, 43, 226);
-  
   margin: 60px;
-  
+}
+
+.client-info-card {
+  border: 3px solid blue;
+  margin: 40px;
+  padding: 25px;
+}
+.navbar-link {
+  border: 1px solid black;
+  max-width: 100px;
+
+
 }

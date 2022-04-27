@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ClientContainer from "./ClientContainer"
+import { Route } from "react-router-dom"
 
 
 
@@ -21,7 +22,11 @@ function MainContainer() {
 
     return(
         <div className="main-container">
-            <ClientContainer  clientList={clientList}/>
+            <switch>
+                <Route exact path="/client-list">
+                    <ClientContainer  clientList={clientList}/>
+                </Route>
+            </switch>
         </div>
     )
 }
