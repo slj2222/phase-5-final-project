@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import ClientContainer from "./ClientContainer"
+import ClientListContainer from "./ClientListContainer"
 import { Route } from "react-router-dom"
 
 
@@ -24,7 +24,10 @@ function MainContainer() {
         <div className="main-container">
             <switch>
                 <Route exact path="/client-list">
-                    <ClientContainer  clientList={clientList}/>
+                    <ClientListContainer  clientList={clientList}/>
+                </Route>
+                <Route exact path="/invoice-list">
+                    
                 </Route>
             </switch>
         </div>

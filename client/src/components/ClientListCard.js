@@ -1,8 +1,8 @@
 import React from "react";
 
-function ClientInfoCard({ client }) {
+function ClientListCard({ client }) {
     return (
-        <div className="client-info-card">
+        <div className="client-list-card">
             <div className="client-name">
                 <h5>{client.first_name} {client.last_name}</h5>
             </div>
@@ -19,4 +19,4 @@ function ClientInfoCard({ client }) {
     )
 }
 
-export default ClientInfoCard
+export default ClientListCard
