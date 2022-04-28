@@ -1,6 +1,7 @@
 import React from "react";
 
-function InvoiceSimpleCard({ invoice }) {
+function InvoiceSimpleCard({ showClient, invoice }) {
+    
     return (
         <div className="invoice-simple-card">
             <div>{invoice.invoice_date}</div>
@@ -9,8 +10,6 @@ function InvoiceSimpleCard({ invoice }) {
             <div>{invoice.days_since_invoiced}</div>
             <div>paid/outstanding?</div>
             <button>mark as paid</button>
-            
-
         </div>
     )
 }
