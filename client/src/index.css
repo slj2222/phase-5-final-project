@@ -59,3 +59,9 @@ code {
   margin: 40px;
   padding: 25px;
 }
+
+.client-info-card {
+  border: 3px solid black;
+  margin: 40px;
+  padding: 25px;
+}

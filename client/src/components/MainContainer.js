@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import ClientListContainer from "./ClientListContainer"
 import { Route } from "react-router-dom"
 import InvoicesContainer from "./InvoicesContainer"
+import DetailClientContainer from "./DetailClientContainer"
 
 
 
@@ -29,8 +30,8 @@ function MainContainer() {
                 <Route exact path="/invoice-list">
                     <InvoicesContainer />
                 </Route>
-                <Route>
-                    
+                <Route exact path="/client-list/:id">
+                    <DetailClientContainer />
                 </Route>
             </switch>
         </div>
