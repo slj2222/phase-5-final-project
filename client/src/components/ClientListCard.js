@@ -10,6 +10,11 @@ function ClientListCard({ client }) {
                 <h5>{client.phone_number}</h5>
                 <h5>{client.email_address}</h5>
             </div>
+            <div className="client-property-information">
+                <h5>
+                    client property = not working
+                </h5>
+            </div>
             
 
             <button className="button">Add to this week = not working</button>
