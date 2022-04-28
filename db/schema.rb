@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_04_27_184726) do
 
   create_table "invoices", force: :cascade do |t|
     t.string "invoice_date"
-    t.float "amount_charged"
+    t.float "invoice_amount"
     t.integer "client_id", null: false
     t.integer "property_id", null: false
     t.boolean "collected"
@@ -40,12 +40,11 @@ ActiveRecord::Schema.define(version: 2022_04_27_184726) do
 
   create_table "properties", force: :cascade do |t|
     t.string "address"
-    t.float "invoice_amount"
-    t.bigint "client_id", null: false
+    t.float "amount_charged"
+    t.integer "client_id"
+    t.boolean "this_week"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["client_id"], name: "index_properties_on_client_id"
   end
 
-  add_foreign_key "properties", "clients"
 end

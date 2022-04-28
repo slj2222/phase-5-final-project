@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import ClientListContainer from "./ClientListContainer"
 import { Route } from "react-router-dom"
+import InvoicesContainer from "./InvoicesContainer"
 
 
 
@@ -19,7 +20,6 @@ function MainContainer() {
             })
     }, [])
 
-
     return(
         <div className="main-container">
             <switch>
@@ -27,17 +27,14 @@ function MainContainer() {
                     <ClientListContainer  clientList={clientList}/>
                 </Route>
                 <Route exact path="/invoice-list">
+                    <InvoicesContainer />
+                </Route>
+                <Route>
                     
                 </Route>
             </switch>
         </div>
     )
 }
-
-
-
-
-
-
 
 export default MainContainer

@@ -40,6 +40,22 @@ code {
 .navbar-link {
   border: 1px solid black;
   max-width: 100px;
+}
 
+.invoice-list-container {
+  border: 3px solid black;
+  margin: 40px;
+  padding: 25px;
+}
 
+.invoice-simple-card {
+  border: 3px solid blue;
+  margin: 40px;
+  padding: 25px;
+}
+
+.total-collected {
+  border: 3px solid black;
+  margin: 40px;
+  padding: 25px;
 }
