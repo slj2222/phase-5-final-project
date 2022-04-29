@@ -2,11 +2,11 @@ import React from "react";
 import ClientListCard from "./ClientListCard";
 import { Link } from "react-router-dom";
 
-function ClientListContainer({ clientList }) {
+function ClientListContainer({ clientList, updateDeleteClientList }) {
 
     const clientListMap = clientList.map(client => {
         return (
-            <ClientListCard key={client.id} client={client} />
+            <ClientListCard key={client.id} client={client} updateDeleteClientList={updateDeleteClientList}/>
         )
     })
     return (

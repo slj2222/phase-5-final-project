@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 
 
-function ClientListCard({ client }) {
+function ClientListCard({ client, updateDeleteClientList }) {
     // const useHistory = useHistory()
 
     function handleDelete() {
@@ -12,12 +12,12 @@ function ClientListCard({ client }) {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json'}
         })
-        .then(() => {
-            // console.log(`deleted client`)
-            
-        })
+        
         // .catch(error => console.log(error))
         
+        // console.log(client)
+        updateDeleteClientList(client)
+
         
     }
 

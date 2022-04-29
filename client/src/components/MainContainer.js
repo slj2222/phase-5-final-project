@@ -27,15 +27,16 @@ function MainContainer() {
         setClientList(updatedNewClientList)
     }
 
-    // function updateDeleteClientList(removedClient) {
-    //     const updatedRemovedClient = 
-    // }
+    function updateDeleteClientList(removedClient) {
+        setClientList(clientList.filter(client => client !== removedClient))   
+    }
 
+    
     return(
         <div className="main-container">
             <switch>
                 <Route exact path="/client-list">
-                    <ClientListContainer  clientList={clientList}/>
+                    <ClientListContainer  clientList={clientList} updateDeleteClientList={updateDeleteClientList}/>
                 </Route>
                 <Route exact path="/invoice-list">
                     <InvoicesContainer />
