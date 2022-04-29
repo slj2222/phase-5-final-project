@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 
 
-function AddClientForm({ updateClientList }) {
+function AddClientForm({ updateNewClientList }) {
     // const history = useHistory()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -35,7 +35,7 @@ function AddClientForm({ updateClientList }) {
         .then(res => res.json())
         .then(data =>{
             // history.push("/clients/")
-            updateClientList(data)
+            updateNewClientList(data)
 
             // if(data.errors){
             //     setErrors(data.errors)
