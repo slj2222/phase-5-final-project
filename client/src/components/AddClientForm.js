@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-function AddClientForm() {
+function AddClientForm({ setClientList }) {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
@@ -32,13 +32,16 @@ function AddClientForm() {
         })
         .then(res => res.json())
         .then(data =>{
+
+            setClientList(data)
+
             // if(data.errors){
             //     setErrors(data.errors)
             // }
             // else{
             //     history.push(`/albums/${albumID}`)
             // }
-            console.log(data)
+            
         })
     }
 

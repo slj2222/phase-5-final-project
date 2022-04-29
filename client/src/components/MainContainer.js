@@ -35,7 +35,7 @@ function MainContainer() {
                     <DetailClientContainer />
                 </Route>
                 <Route exact path="/client/new">
-                    <AddClientForm />
+                    <AddClientForm setClientList={setClientList}/>
                 </Route>
             </switch>
         </div>
