@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -62,7 +62,9 @@ function AddClientForm({ updateNewClientList }) {
                 <input type="text" placeholder="city" onChange={(e) => setCity(e.target.value)} />
                 <input type="text" placeholder="state" onChange={(e) => setState(e.target.value)} />
                 <input type="text" placeholder="zip code" onChange={(e) => setZipCode(e.target.value)} /> */}
-                <input type="submit" value="submit" />
+                <Link to={"/client-list"}>
+                    <input type="submit" value="submit" />
+                </Link>
             </form> 
 
         </div>
