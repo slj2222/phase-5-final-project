@@ -1,5 +1,6 @@
 import React from "react";
 import ClientListCard from "./ClientListCard";
+import { Link } from "react-router-dom";
 
 function ClientListContainer({ clientList }) {
 
@@ -10,6 +11,11 @@ function ClientListContainer({ clientList }) {
     })
     return (
         <div className="client-list-container">
+            <div className="new-client-button">
+                <Link to="/client/new">
+                    <button className="new-client-button">add new client</button>
+                </Link>
+            </div>
             {clientListMap}
         </div>
     )

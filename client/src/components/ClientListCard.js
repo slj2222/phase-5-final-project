@@ -19,7 +19,7 @@ function ClientListCard({ client }) {
                 </h5>
             </div>
             
-
+           
             <button className="button">Add to this week = not working</button>
             <button className="button"> Edit = not working</button>
             <button className="button">Remove client = not working</button>

@@ -65,3 +65,11 @@ code {
   margin: 40px;
   padding: 25px;
 }
+
+.add-client-form {
+  display: flexbox;
+  
+  width: 100%;
+  background-color: aquamarine;
+  height: 100px;
+}

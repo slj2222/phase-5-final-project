@@ -3,6 +3,7 @@ import ClientListContainer from "./ClientListContainer"
 import { Route } from "react-router-dom"
 import InvoicesContainer from "./InvoicesContainer"
 import DetailClientContainer from "./DetailClientContainer"
+import AddClientForm from "./AddClientForm"
 
 
 
@@ -32,6 +33,9 @@ function MainContainer() {
                 </Route>
                 <Route exact path="/client-list/:id">
                     <DetailClientContainer />
+                </Route>
+                <Route exact path="/client/new">
+                    <AddClientForm />
                 </Route>
             </switch>
         </div>
