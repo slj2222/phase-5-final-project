@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ClientListCard({ client }) {
+
+
+
     return (
         <div className="client-list-card">
             <div className="client-name">

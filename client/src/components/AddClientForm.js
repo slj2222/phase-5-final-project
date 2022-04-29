@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+// import { useHistory } from "react-router-dom";
 
 
-function AddClientForm({ setClientList }) {
+
+function AddClientForm({ updateClientList }) {
+    // const history = useHistory()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
@@ -15,7 +18,6 @@ function AddClientForm({ setClientList }) {
     function handleSubmit(e) {
         e.preventDefault()
         
-
         fetch("/clients", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
@@ -32,8 +34,8 @@ function AddClientForm({ setClientList }) {
         })
         .then(res => res.json())
         .then(data =>{
-
-            setClientList(data)
+            // history.push("/clients/")
+            updateClientList(data)
 
             // if(data.errors){
             //     setErrors(data.errors)
@@ -51,7 +53,7 @@ function AddClientForm({ setClientList }) {
         <div className="add-client-container">
             <h3>add new client</h3>
 
-            <form className="add-client-form" onClick={handleSubmit}>
+            <form className="add-client-form" onSubmit={handleSubmit}>
                 <input type="text" placeholder="first name" onChange={(e) => setFirstName(e.target.value)} />
                 <input type="text" placeholder="last name" onChange={(e) => setLastName(e.target.value)} />
                 <input type="text" placeholder="phone number" onChange={(e) => setPhoneNumber(e.target.value)} />
@@ -60,7 +62,7 @@ function AddClientForm({ setClientList }) {
                 <input type="text" placeholder="city" onChange={(e) => setCity(e.target.value)} />
                 <input type="text" placeholder="state" onChange={(e) => setState(e.target.value)} />
                 <input type="text" placeholder="zip code" onChange={(e) => setZipCode(e.target.value)} /> */}
-                <input type="submit" />
+                <input type="submit" value="submit" />
             </form> 
 
         </div>

@@ -26,6 +26,8 @@ function DetailClientContainer() {
             })
     }, [id])
 
+    
+
 
 
         const mapShowClientInvoices = showClientInvoices.map(invoice => {

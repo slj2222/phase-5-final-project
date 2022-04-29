@@ -22,6 +22,11 @@ function MainContainer() {
             })
     }, [])
 
+    function updateClientList(newClient) {
+        const updatedClientList = [...clientList, newClient]
+        setClientList(updatedClientList)
+    }
+
     return(
         <div className="main-container">
             <switch>
@@ -35,7 +40,7 @@ function MainContainer() {
                     <DetailClientContainer />
                 </Route>
                 <Route exact path="/client/new">
-                    <AddClientForm setClientList={setClientList}/>
+                    <AddClientForm updateClientList={updateClientList}/>
                 </Route>
             </switch>
         </div>
