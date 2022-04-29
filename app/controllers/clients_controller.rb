@@ -10,4 +10,15 @@ class ClientsController < ApplicationController
             render json: client, serializer: ClientWithInvoices
         end
     end
+
+    def create
+        newClient = Client.create(clientParams)
+        render json: newClient
+    end
+
+    private
+
+    def clientParams
+        params.permit(:first_name, :last_name, :phone_number, :email_address)
+    end
 end
