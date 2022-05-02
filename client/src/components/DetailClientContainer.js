@@ -5,14 +5,11 @@ import InvoiceSimpleCard from "./InvoiceSimpleCard";
 
 function DetailClientContainer() {
     const [showClient, setShowClient] = useState([])
-    // console.log(showClient)
-    // console.log(showClient.invoices)
-    
-
     // const [showClientProperty, setShowClientProperty] = useState([])
+  
     const [showClientInvoices, setShowClientInvoices] = useState([])
+    
     const { id } = useParams()
-    // console.log(useParams())
 
     useEffect(() => {
         fetch(`/clients/${id}`)
@@ -25,10 +22,7 @@ function DetailClientContainer() {
                 
             })
     }, [id])
-
     
-
-
 
         const mapShowClientInvoices = showClientInvoices.map(invoice => {
             return (

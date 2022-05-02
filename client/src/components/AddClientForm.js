@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 
 
 
@@ -36,6 +36,7 @@ function AddClientForm({ updateNewClientList }) {
         .then(data =>{
             // history.push("/clients/")
             updateNewClientList(data)
+            // console.log(data)
 
             // if(data.errors){
             //     setErrors(data.errors)
@@ -52,7 +53,7 @@ function AddClientForm({ updateNewClientList }) {
     return (
         <div className="add-client-container">
             <h3>add new client</h3>
-
+        
             <form className="add-client-form" onSubmit={handleSubmit}>
                 <input type="text" placeholder="first name" onChange={(e) => setFirstName(e.target.value)} />
                 <input type="text" placeholder="last name" onChange={(e) => setLastName(e.target.value)} />
@@ -62,9 +63,10 @@ function AddClientForm({ updateNewClientList }) {
                 <input type="text" placeholder="city" onChange={(e) => setCity(e.target.value)} />
                 <input type="text" placeholder="state" onChange={(e) => setState(e.target.value)} />
                 <input type="text" placeholder="zip code" onChange={(e) => setZipCode(e.target.value)} /> */}
-                <Link to={"/client-list"}>
+                {/* for some reason the LINK is messing up the POST */}
+                {/* <Link to={"/client-list"}> */}
                     <input type="submit" value="submit" />
-                </Link>
+                {/* </Link> */}
             </form> 
 
         </div>

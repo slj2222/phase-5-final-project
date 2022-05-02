@@ -1,25 +1,20 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function ClientListCard({ client, updateDeleteClientList }) {
     // const useHistory = useHistory()
 
     function handleDelete() {
-
-        
-        fetch(`/clients/${client.id}`, {
+    fetch(`/clients/${client.id}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json'}
         })
-        
         // .catch(error => console.log(error))
-        
         // console.log(client)
         updateDeleteClientList(client)
-
-        
     }
+
 
 
     return (
@@ -40,9 +35,11 @@ function ClientListCard({ client, updateDeleteClientList }) {
             </div>
             
            
-            <button className="button">Add to this week = not working</button>
-            <button className="button"> Edit = not working</button>
-            <button className="button" onClick={handleDelete}>Remove client = not working</button>
+            <button className="button">add to this week = not working</button>
+            <Link to={`/client/:#{id}`}>
+                <button className="button">edit = not working</button>
+            </Link>
+            <button className="button" onClick={handleDelete}>remove client</button>
         </div>
     )
 }

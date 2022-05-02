@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ClientListContainer from "./ClientListContainer"
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import InvoicesContainer from "./InvoicesContainer"
 import DetailClientContainer from "./DetailClientContainer"
 import AddClientForm from "./AddClientForm"
@@ -18,9 +18,10 @@ function MainContainer() {
                 
                 // console.log(data)
                 setClientList(data)
-
+                
             })
     }, [])
+    
 
     function updateNewClientList(newClient) {
         const updatedNewClientList = [...clientList, newClient]
@@ -34,9 +35,9 @@ function MainContainer() {
     
     return(
         <div className="main-container">
-            <switch>
+            <Switch>
                 <Route exact path="/client-list">
-                    <ClientListContainer  clientList={clientList} updateDeleteClientList={updateDeleteClientList}/>
+                    <ClientListContainer clientList={clientList} updateDeleteClientList={updateDeleteClientList}/>
                 </Route>
                 <Route exact path="/invoice-list">
                     <InvoicesContainer />
@@ -47,7 +48,8 @@ function MainContainer() {
                 <Route exact path="/client/new">
                     <AddClientForm updateNewClientList={updateNewClientList}/>
                 </Route>
-            </switch>
+                
+            </Switch>
         </div>
     )
 }
