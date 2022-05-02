@@ -35,7 +35,7 @@ function DetailClientContainer() {
         <div className="detail-client-container">
             <ClientInfoCard showClient={showClient}/>
             
-            <Link to="/invoice/new">
+            <Link to={`/clients/${id}/invoice/new`}>
                 <button>add an invoice</button>
             </Link>
 

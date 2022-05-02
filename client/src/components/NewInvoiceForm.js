@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 function NewInvoiceForm({ updateNewInvoiceList }) {
     const [invoiceDate, setInvoiceDate] = useState('')
     const [invoiceAmount, setInvoiceAmount] = useState('')
-
+    const [propertyId, setPropertyId] = useState('')
+    const { id } = useParams()
     
 
     function handleNewInvoice(e) {
@@ -15,8 +17,8 @@ function NewInvoiceForm({ updateNewInvoiceList }) {
             body: JSON.stringify({
                 invoice_date: invoiceDate, 
                 invoice_amount: invoiceAmount, 
-                // client_id: ???????
-                // property_id: ??????? 
+                client_id: id,
+                property_id: propertyId,    
             })
         })
         .then(res => res.json())
@@ -34,9 +36,8 @@ function NewInvoiceForm({ updateNewInvoiceList }) {
             <form className="new-invoice-form" onSubmit={handleNewInvoice}>
                 <input type="text" placeholder="invoice_date" onChange={(e) => setInvoiceDate(e.target.value)} />
                 <input type="text" placeholder="invoice_amount" onChange={(e) => setInvoiceAmount(e.target.value)} />
-                {/* <input type="text" placeholder="client???????" onChange={(e) => (e.target.value)} />
-                <input type="text" placeholder="property???????" onChange={(e) => (e.target.value)} /> */}
-                <input type="submit" value="create invoice" />
+                <input type="text" placeholder="property_id" onChange={(e) => setPropertyId(e.target.value)} />
+                <input type="submit" value="submit" />
                 
             </form>
         </div>

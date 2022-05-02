@@ -24,9 +24,6 @@ function MainContainer() {
             })
     }, [])
 
-  
-
-
     useEffect(() => {
         fetch("/invoices")
             .then(res => res.json())
@@ -53,6 +50,10 @@ function MainContainer() {
         setInvoiceList(updatedNewInvoice)
     }
     
+    // function updateEditedInvoiceList(paidInvoice) {
+    //     const updated
+    // }
+
     return(
         <div className="main-container">
             <Switch>
@@ -60,7 +61,7 @@ function MainContainer() {
                     <ClientListContainer clientList={clientList} updateDeleteClientList={updateDeleteClientList}/>
                 </Route>
                 <Route exact path="/invoice-list">
-                    <InvoicesContainer invoiceList={invoiceList}/>
+                    <InvoicesContainer invoiceList={invoiceList} />
                 </Route>
                 <Route exact path="/client-list/:id">
                     <DetailClientContainer />
@@ -71,7 +72,7 @@ function MainContainer() {
                 <Route exact path ="/clients/:id">
                     <EditClientForm />
                 </Route>
-                <Route exact path ="/invoice/new">
+                <Route exact path ="/clients/:id/invoice/new">
                     <NewInvoiceForm updateNewInvoiceList={updateNewInvoiceList}/>
                 </Route>
             </Switch>
