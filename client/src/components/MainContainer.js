@@ -6,6 +6,7 @@ import DetailClientContainer from "./DetailClientContainer"
 import AddClientForm from "./AddClientForm"
 import EditClientForm from "./EditClientForm"
 import NewInvoiceForm from "./NewInvoiceForm"
+import AddPropertyForm from "./AddPropertyForm"
 
 
 
@@ -74,6 +75,9 @@ function MainContainer() {
                 </Route>
                 <Route exact path ="/clients/:id/invoice/new">
                     <NewInvoiceForm updateNewInvoiceList={updateNewInvoiceList}/>
+                </Route>
+                <Route exact path ="/client-list/:id/properties/new">
+                    <AddPropertyForm />
                 </Route>
             </Switch>
         </div>

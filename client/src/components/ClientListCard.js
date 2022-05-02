@@ -7,7 +7,7 @@ function ClientListCard({ client, updateDeleteClientList }) {
     const { id } = useParams()
 
 
-    
+
     function handleDelete() {
     fetch(`/clients/${client.id}`, {
             method: 'DELETE',
@@ -24,7 +24,9 @@ function ClientListCard({ client, updateDeleteClientList }) {
         <div className="client-list-card">
             <div className="client-name">
                 <Link to={`/client-list/${client.id}`}>
+                    
                     <h5>{client.first_name} {client.last_name}</h5>
+                    <h3>client id: {client.id}</h3>
                 </Link>
             </div>
             {/* <div className="client-contact-information">

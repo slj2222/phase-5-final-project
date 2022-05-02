@@ -38,6 +38,9 @@ function DetailClientContainer() {
             <Link to={`/clients/${id}/invoice/new`}>
                 <button>add an invoice</button>
             </Link>
+            <Link to={`/client-list/${id}/properties/new`}>
+                <button>add a property</button>
+            </Link>
 
             <div>
             {mapShowClientInvoices}

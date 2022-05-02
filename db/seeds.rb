@@ -12,6 +12,11 @@ c2 = Client.create(first_name: "Josh", last_name: "Robo", phone_number: "555-555
 c3 = Client.create(first_name: "Gary", last_name: "Craig", phone_number: "555-555-5555", email_address: "omg@gmail.com", total_invoiced: 0, total_collected: 0)
 c4 = Client.create(first_name: "Jimmy", last_name: "Smith", phone_number: "555-555-5555", email_address: "no@gmail.com", total_invoiced: 0, total_collected: 0)
 
+# p1 = Property.create(address: "1401 S King St", client_id: c1.id, this_week: true)
+# p2 = Property.create(address: "2221 E Walnut St", client_id: c2.id, this_week: true)
+# p3 = Property.create(address: "1401 W Florida St", client_id: c3.id, this_week: false)
+# p4 = Property.create(address: "1401 N Crash St", client_id: c4.id, this_week: false)
+
 p1 = Property.create(address: "1401 S King St", amount_charged: 10, client_id: c1.id, this_week: true)
 p2 = Property.create(address: "2221 E Walnut St", amount_charged: 20, client_id: c2.id, this_week: true)
 p3 = Property.create(address: "1401 W Florida St", amount_charged: 30, client_id: c3.id, this_week: false)

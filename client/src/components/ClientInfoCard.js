@@ -7,6 +7,9 @@ function ClientInfoCard({ showClient }) {
     return (
         <div className="client-info-card">
             <div>
+                client id: {showClient.id}
+            </div>
+            <div>
                 {showClient.first_name} {showClient.last_name}
             </div>
             <div>
