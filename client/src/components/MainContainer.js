@@ -4,11 +4,13 @@ import { Route, Switch } from "react-router-dom"
 import InvoicesContainer from "./InvoicesContainer"
 import DetailClientContainer from "./DetailClientContainer"
 import AddClientForm from "./AddClientForm"
+import EditClientForm from "./EditClientForm"
+import NewInvoiceForm from "./NewInvoiceForm"
 
 
 
 function MainContainer() {
-
+    const [invoiceList, setInvoiceList] = useState([])
     const [clientList, setClientList] = useState([])
 
     useEffect(() => {
@@ -19,6 +21,20 @@ function MainContainer() {
                 // console.log(data)
                 setClientList(data)
                 
+            })
+    }, [])
+
+  
+
+
+    useEffect(() => {
+        fetch("/invoices")
+            .then(res => res.json())
+            .then(data => {
+                
+                // console.log(data)
+                setInvoiceList(data)
+
             })
     }, [])
     
@@ -32,6 +48,10 @@ function MainContainer() {
         setClientList(clientList.filter(client => client !== removedClient))   
     }
 
+    function updateNewInvoiceList(newInvoice) {
+        const updatedNewInvoice = [...invoiceList, newInvoice]
+        setInvoiceList(updatedNewInvoice)
+    }
     
     return(
         <div className="main-container">
@@ -40,7 +60,7 @@ function MainContainer() {
                     <ClientListContainer clientList={clientList} updateDeleteClientList={updateDeleteClientList}/>
                 </Route>
                 <Route exact path="/invoice-list">
-                    <InvoicesContainer />
+                    <InvoicesContainer invoiceList={invoiceList}/>
                 </Route>
                 <Route exact path="/client-list/:id">
                     <DetailClientContainer />
@@ -48,7 +68,12 @@ function MainContainer() {
                 <Route exact path="/client/new">
                     <AddClientForm updateNewClientList={updateNewClientList}/>
                 </Route>
-                
+                <Route exact path ="/clients/:id">
+                    <EditClientForm />
+                </Route>
+                <Route exact path ="/invoice/new">
+                    <NewInvoiceForm updateNewInvoiceList={updateNewInvoiceList}/>
+                </Route>
             </Switch>
         </div>
     )

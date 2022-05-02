@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 function ClientListCard({ client, updateDeleteClientList }) {
     // const useHistory = useHistory()
+    const { id } = useParams()
 
+
+    
     function handleDelete() {
     fetch(`/clients/${client.id}`, {
             method: 'DELETE',
@@ -36,9 +39,9 @@ function ClientListCard({ client, updateDeleteClientList }) {
             
            
             <button className="button">add to this week = not working</button>
-            <Link to={`/client/:#{id}`}>
+            {/* <Link to={`/clients/${id}`}>
                 <button className="button">edit = not working</button>
-            </Link>
+            </Link> */}
             <button className="button" onClick={handleDelete}>remove client</button>
         </div>
     )

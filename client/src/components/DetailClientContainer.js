@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ClientInfoCard from "./ClientInfoCard";
 import InvoiceSimpleCard from "./InvoiceSimpleCard";
 
 function DetailClientContainer() {
     const [showClient, setShowClient] = useState([])
     // const [showClientProperty, setShowClientProperty] = useState([])
-  
     const [showClientInvoices, setShowClientInvoices] = useState([])
     
     const { id } = useParams()
+    
 
     useEffect(() => {
         fetch(`/clients/${id}`)
@@ -34,7 +34,14 @@ function DetailClientContainer() {
     return (
         <div className="detail-client-container">
             <ClientInfoCard showClient={showClient}/>
+            
+            <Link to="/invoice/new">
+                <button>add an invoice</button>
+            </Link>
+
+            <div>
             {mapShowClientInvoices}
+            </div>
         </div>
     )
 }
