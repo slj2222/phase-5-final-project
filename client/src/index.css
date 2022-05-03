@@ -54,6 +54,12 @@ code {
   padding: 25px;
 }
 
+.property-simple-card {
+  border: 3px solid blue;
+  margin: 40px;
+  padding: 25px;
+}
+
 .total-collected {
   border: 3px solid black;
   margin: 40px;

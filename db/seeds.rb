@@ -17,10 +17,10 @@ c4 = Client.create(first_name: "Jimmy", last_name: "Smith", phone_number: "555-5
 # p3 = Property.create(address: "1401 W Florida St", client_id: c3.id, this_week: false)
 # p4 = Property.create(address: "1401 N Crash St", client_id: c4.id, this_week: false)
 
-p1 = Property.create(address: "1401 S King St", amount_charged: 10, client_id: c1.id, this_week: true)
-p2 = Property.create(address: "2221 E Walnut St", amount_charged: 20, client_id: c2.id, this_week: true)
-p3 = Property.create(address: "1401 W Florida St", amount_charged: 30, client_id: c3.id, this_week: false)
-p4 = Property.create(address: "1401 N Crash St", amount_charged: 40, client_id: c4.id, this_week: false)
+p1 = Property.create(address: "1401 S King St", city: "Springfield", state: "MO", zip_code: 65807, amount_charged: 10, client_id: c1.id, this_week: true)
+p2 = Property.create(address: "2221 E Walnut St", city: "Springfield", state: "MO", zip_code: 65807, amount_charged: 20, client_id: c2.id, this_week: true)
+p3 = Property.create(address: "1401 W Florida St", city: "Springfield", state: "MO", zip_code: 65804, amount_charged: 30, client_id: c3.id, this_week: false)
+p4 = Property.create(address: "1401 N Crash St", city: "Springfield", state: "MO", zip_code: 65807, amount_charged: 40, client_id: c4.id, this_week: false)
 
 i1 = Invoice.create(invoice_date: "01/01/2022", invoice_amount: 10.00, client_id: c1.id, property_id: p1.id, collected: false, days_since_invoiced: 1, invoiced: true)
 i2 = Invoice.create(invoice_date: "02/02/2022", invoice_amount: 20.00, client_id: c2.id, property_id: p2.id, collected: true, days_since_invoiced: 2, invoiced: true)

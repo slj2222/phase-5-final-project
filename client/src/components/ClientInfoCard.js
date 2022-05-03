@@ -6,11 +6,12 @@ function ClientInfoCard({ showClient }) {
     const { id } = useParams()
     return (
         <div className="client-info-card">
-            <div>
-                client id: {showClient.id}
-            </div>
+            
             <div>
                 {showClient.first_name} {showClient.last_name}
+            </div>
+            <div>
+                client id: {showClient.id}
             </div>
             <div>
                 {showClient.phone_number} {showClient.email_address}
