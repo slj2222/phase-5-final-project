@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 function InvoiceSimpleCard({ showClient, invoice }) {
     const [isPaid, setIsPaid] = useState(false)
-
+console.log(invoice)
 
     
     // const { id } = useParams()
@@ -28,7 +28,7 @@ function InvoiceSimpleCard({ showClient, invoice }) {
     return (
         <div className="invoice-simple-card">
             <div>{invoice.invoice_date}</div>
-            <div>property = needs info and link </div>
+            <div>property id: {invoice.property_id} </div>
             <div>invoice amount: ${invoice.invoice_amount}</div>
             <div>days since invoiced: {invoice.days_since_invoiced}</div>
             {isPaid ? <div> paid </div> :
