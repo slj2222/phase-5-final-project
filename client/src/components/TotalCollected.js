@@ -1,9 +1,9 @@
 import React from "react";
 
-function TotalCollected() {
+function TotalCollected({ totalCollected }) {
     return (
         <div className="total-collected">
-            total $ collected
+            total $ collected: ${totalCollected}
         </div>
     )
 }

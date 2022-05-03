@@ -17,8 +17,8 @@ class ClientsController < ApplicationController
     end
 
     def update
-        editClient = Client.find_by(id: params[:id])
-        editClient.update(clientParams)
+        editClient = Client.find(params[:id])
+        render json: editClient.update(clientParams)
     end
 
     def destroy

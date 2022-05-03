@@ -20,6 +20,11 @@ class InvoicesController < ApplicationController
         deleteInvoice.destroy
     end
 
+    def total_invoiced
+        totalInvoiced = Invoice.total_invoiced
+        render json: totalInvoiced
+    end
+
     private
 
     def invoiceParams

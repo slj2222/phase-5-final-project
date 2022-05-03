@@ -15,25 +15,24 @@ function EditClientForm() {
     function handleEditSubmit(e) {
         e.preventdefault()
 
-        // useEffect(() => {
-            fetch(`/clients/${id}`, {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    first_name: firstName, 
-                    // last_name: lastName, 
-                    // phone_number: phoneNumber, 
-                    // email_address: emailAddress,
-                })
+        fetch(`/clients/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                first_name: firstName, 
+                // last_name: lastName, 
+                // phone_number: phoneNumber, 
+                // email_address: emailAddress,
             })
-            .then(res => res.json())
-            .then(data =>{
-                // setEditedClient(data)
-                console.log(data)
-            })
-            // .catch(error => console.log(error))
+        })
+        .then(res => res.json())
+        .then(data =>{
+            // setEditedClient(data)
+            console.log(data)
+        })
         
-        // }, [id])
+        
+        
     }
 
 
