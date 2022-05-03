@@ -13,6 +13,7 @@ import AddPropertyForm from "./AddPropertyForm"
 function MainContainer() {
     const [invoiceList, setInvoiceList] = useState([])
     const [clientList, setClientList] = useState([])
+    const [showClientProperties, setShowClientProperties] = useState([])
 
     useEffect(() => {
         fetch("/clients")
@@ -30,7 +31,7 @@ function MainContainer() {
             .then(res => res.json())
             .then(data => {
                 
-                // console.log(data)
+                console.log(data)
                 setInvoiceList(data)
 
             })
@@ -50,34 +51,55 @@ function MainContainer() {
         const updatedNewInvoice = [...invoiceList, newInvoice]
         setInvoiceList(updatedNewInvoice)
     }
+
+
+    function updateClientNewProperty(newProperty) {
+        const newClientProperties = [...showClientProperties, newProperty]
+        setShowClientProperties(newClientProperties)
+        console.log(newClientProperties)
+        console.log(showClientProperties)
+    }
     
-    // function updateEditedInvoiceList(paidInvoice) {
-    //     const updated
-    // }
+    
 
     return(
         <div className="main-container">
             <Switch>
                 <Route exact path="/client-list">
-                    <ClientListContainer clientList={clientList} updateDeleteClientList={updateDeleteClientList}/>
+                    <ClientListContainer 
+                        clientList={clientList} 
+                        updateDeleteClientList={updateDeleteClientList}
+                    />
                 </Route>
                 <Route exact path="/invoice-list">
-                    <InvoicesContainer invoiceList={invoiceList} />
+                    <InvoicesContainer 
+                        invoiceList={invoiceList} 
+                    />
                 </Route>
                 <Route exact path="/client-list/:id">
-                    <DetailClientContainer />
+                    <DetailClientContainer 
+                    invoiceList={invoiceList} 
+                        // showClientProperties={showClientProperties} 
+                        // setShowClientProperties={setShowClientProperties}  
+                    />
                 </Route>
                 <Route exact path="/client/new">
-                    <AddClientForm updateNewClientList={updateNewClientList}/>
+                    <AddClientForm 
+                        updateNewClientList={updateNewClientList}
+                    />
                 </Route>
                 <Route exact path ="/clients/:id">
                     <EditClientForm />
                 </Route>
                 <Route exact path ="/clients/:id/invoice/new">
-                    <NewInvoiceForm updateNewInvoiceList={updateNewInvoiceList}/>
+                    <NewInvoiceForm 
+                        updateNewInvoiceList={updateNewInvoiceList}
+                    />
                 </Route>
                 <Route exact path ="/client-list/:id/properties/new">
-                    <AddPropertyForm />
+                    <AddPropertyForm 
+                    updateClientNewProperty={updateClientNewProperty} 
+                    />
                 </Route>
             </Switch>
         </div>

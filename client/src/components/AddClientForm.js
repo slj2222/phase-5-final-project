@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -38,22 +38,6 @@ function AddClientForm({ updateNewClientList }) {
             updateNewClientList(data)
             setIsLoaded(true)
         })
-
-    //     fetch(`/clients/${id}/properties`, {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json'},
-    //         body: JSON.stringify({
-    //             // first_name: firstName, 
-    //             // last_name: lastName, 
-    //             // phone_number: phoneNumber, 
-    //             // email_address: emailAddress,
-    //             client_id: 1, 
-    //             address: address, 
-    //             city: city, 
-    //             state: state, 
-    //             zip_code: zipCode
-    //         })
-    //     })
     }
 
 

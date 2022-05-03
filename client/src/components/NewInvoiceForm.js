@@ -24,7 +24,7 @@ function NewInvoiceForm({ updateNewInvoiceList }) {
         .then(res => res.json())
         .then(data =>{
             updateNewInvoiceList(data)
-            console.log(data)
+            // console.log(data)
         })
     }
     

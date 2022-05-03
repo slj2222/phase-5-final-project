@@ -4,19 +4,7 @@ import TotalCollected from "./TotalCollected"
 
 function InvoicesContainer({ invoiceList }) {
 
-    // const [invoiceList, setInvoiceList] = useState([])
-
-
-    // useEffect(() => {
-    //     fetch("/invoices")
-    //         .then(res => res.json())
-    //         .then(data => {
-                
-    //             // console.log(data)
-    //             setInvoiceList(data)
-
-    //         })
-    // }, [])
+   
     
     return (
         <div className="invoices-container">

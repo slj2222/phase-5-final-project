@@ -8,7 +8,7 @@ function InvoiceSimpleCard({ showClient, invoice }) {
     
     // const { id } = useParams()
     // console.log(id)
-    console.log(invoice)
+    // console.log(invoice)
     // console.log(showClient)
 
     function handleClick() {

@@ -4,12 +4,12 @@ import ClientInfoCard from "./ClientInfoCard";
 import InvoiceSimpleCard from "./InvoiceSimpleCard";
 import PropertySimpleCard from "./PropertySimpleCard";
 
-function DetailClientContainer() {
+function DetailClientContainer({ }) {
     const [showClient, setShowClient] = useState([])
     // const [showClientProperty, setShowClientProperty] = useState([])
     const [showClientInvoices, setShowClientInvoices] = useState([])
     const [showClientProperties, setShowClientProperties] = useState([])
-    
+    // console.log(showClientProperties)
     const { id } = useParams()
     
 
@@ -17,14 +17,20 @@ function DetailClientContainer() {
         fetch(`/clients/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setShowClient(data)
                 setShowClientInvoices(data.invoices)
                 setShowClientProperties(data.properties)
-                
-                
             })
     }, [id])
+
+
+    // function updateClientNewProperty(newProperty) {
+    //     const newClientProperties = [...showClientProperties, newProperty]
+    //     setShowClientProperties(newClientProperties)
+    // }
+
+    
     
 
     const mapShowClientInvoices = showClientInvoices.map(invoice => {
@@ -33,8 +39,8 @@ function DetailClientContainer() {
         )
     })
 
-    const mapShowClientProperties = showClientProperties.map(property => {
-        return (
+    const mapClientProperties = showClientProperties.map(property => {
+        return (    
             <PropertySimpleCard key={ property.id} property={property} />
         )
     })
@@ -43,7 +49,7 @@ function DetailClientContainer() {
     return (
         <div className="detail-client-container">
             <ClientInfoCard showClient={showClient}/>
-            {mapShowClientProperties}
+            {mapClientProperties}
             <Link to={`/clients/${id}/invoice/new`}>
                 <button>add an invoice</button>
             </Link>

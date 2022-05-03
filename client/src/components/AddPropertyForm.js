@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-function AddPropertyForm() {
+function AddPropertyForm({ updateClientNewProperty }) {
     const [address, setAddress] = useState('')
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
@@ -16,10 +16,6 @@ function AddPropertyForm() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({
-                // first_name: firstName, 
-                // last_name: lastName, 
-                // phone_number: phoneNumber, 
-                // email_address: emailAddress,
                 client_id: id, 
                 address: address, 
                 city: city, 
@@ -29,7 +25,9 @@ function AddPropertyForm() {
             })
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => 
+            // console.log(data))
+            updateClientNewProperty(data))
     }
 
 
