@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 
 function SignUp({ setCurrentCompany }) {
 
@@ -21,6 +21,7 @@ function SignUp({ setCurrentCompany }) {
             // if(data.errors){
                 // setErrors(data.errors)
             // }else {
+                
                 setCurrentCompany(data)
                 history.push('/') 
             // }
@@ -41,7 +42,9 @@ function SignUp({ setCurrentCompany }) {
                 <input type="text" name="password" placeholder="" onChange={(e) => setPassword(e.target.value)}/>
                 <label htmlFor="confirm-password">confirm password:</label>
                 <input type="text" name="confirm password" placeholder="" onChange={(e) => setConfirmPassword(e.target.value)}/>
-                <input type="submit" name="sign up"></input>
+                <Link to="logged-in">
+                    <input type="submit" name="sign up"></input>
+                </Link>
             </form>
         </div>
     )

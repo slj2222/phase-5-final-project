@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/total-invoiced", to: "invoices#total_invoiced"
   post "/login", to: "sessions#create"
   get "/auth", to: "companies#show"
+  post "/signup", to: "companies#create"
   
   
   # Routing logic: fallback requests for React Router.
