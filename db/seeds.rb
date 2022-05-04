@@ -13,11 +13,12 @@ c3 = Client.create(first_name: "Gary", last_name: "Craig", phone_number: "555-55
 c4 = Client.create(first_name: "Jimmy", last_name: "Smith", phone_number: "555-555-5555", email_address: "no@gmail.com", total_invoiced: 0, total_collected: 0)
 puts "done seeding clients"
 company1 = Company.create(company_name: "MY COMPANY", company_phone_number: "417-209-5022", company_email_address: "MYCOMPANY@mail.com", password: "1234")
+company2 = Company.create(company_name: "TWO COMPANY", company_phone_number: "417-209-5022", company_email_address: "MYCOMPANY@mail.com", password: "1234")
 puts "done seeding companies"
 p1 = Property.create(address: "1401 S King St", city: "Springfield", state: "MO", zip_code: 65807, amount_charged: 10, client_id: c1.id, this_week: true, company_id: company1.id)
 p2 = Property.create(address: "2221 E Walnut St", city: "Springfield", state: "MO", zip_code: 65807, amount_charged: 20, client_id: c2.id, this_week: true, company_id: company1.id)
-p3 = Property.create(address: "1401 W Florida St", city: "Springfield", state: "MO", zip_code: 65804, amount_charged: 30, client_id: c3.id, this_week: false, company_id: company1.id)
-p4 = Property.create(address: "1401 N Crash St", city: "Springfield", state: "MO", zip_code: 65807, amount_charged: 40, client_id: c4.id, this_week: false, company_id: company1.id)
+p3 = Property.create(address: "1401 W Florida St", city: "Springfield", state: "MO", zip_code: 65804, amount_charged: 30, client_id: c3.id, this_week: false, company_id: company2.id)
+p4 = Property.create(address: "1401 N Crash St", city: "Springfield", state: "MO", zip_code: 65807, amount_charged: 40, client_id: c4.id, this_week: false, company_id: company2.id)
 puts "done seeding properties"
 i1 = Invoice.create(invoice_date: "01/01/2022", invoice_amount: 10.00, client_id: c1.id, property_id: p1.id, collected: false, days_since_invoiced: 1, invoiced: true)
 i2 = Invoice.create(invoice_date: "02/02/2022", invoice_amount: 20.00, client_id: c2.id, property_id: p2.id, collected: true, days_since_invoiced: 2, invoiced: true)

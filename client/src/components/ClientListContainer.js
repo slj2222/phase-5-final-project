@@ -13,7 +13,7 @@ function ClientListContainer({ clientList, updateDeleteClientList, currentCompan
     return (
         <div className="client-list-container">
             <div className="new-client-button">
-                <Link to="/client/new">
+                <Link to="/clients/new">
                     <button className="new-client-button">add new client</button>
                 </Link>
             </div>

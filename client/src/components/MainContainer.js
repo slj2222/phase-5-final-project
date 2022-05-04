@@ -12,10 +12,13 @@ import Login from "./Login"
 
 
 function MainContainer({ currentCompany }) {
+    console.log(currentCompany)
+    
     // const [currentCompany, setCurrentCompany] = useState('')
     const [invoiceList, setInvoiceList] = useState([])
     const [clientList, setClientList] = useState([])
     const [showClientProperties, setShowClientProperties] = useState([])
+    
 
     // useEffect(()=>{
     //     fetch('/auth')
@@ -92,7 +95,7 @@ function MainContainer({ currentCompany }) {
                         currentCompany={currentCompany}
                     />
                 </Route>
-                <Route exact path="/invoice-list">
+                <Route exact path="/invoices">
                     <InvoicesContainer 
                         invoiceList={invoiceList}
                         currentCompany={currentCompany} 
@@ -106,7 +109,7 @@ function MainContainer({ currentCompany }) {
                         currentCompany={currentCompany}
                     />
                 </Route>
-                <Route exact path="/client/new">
+                <Route exact path="/clients/new">
                     <AddClientForm 
                         updateNewClientList={updateNewClientList}
                         currentCompany={currentCompany}
@@ -115,7 +118,7 @@ function MainContainer({ currentCompany }) {
                 <Route exact path ="/clients/:id">
                     <EditClientForm currentCompany={currentCompany}/>
                 </Route>
-                <Route exact path ="/clients/:id/invoice/new">
+                <Route exact path ="/clients/:id/invoices/new">
                     <NewInvoiceForm 
                         updateNewInvoiceList={updateNewInvoiceList}
                         currentCompany={currentCompany}

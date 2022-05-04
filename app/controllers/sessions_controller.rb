@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
     skip_before_action :authorized, only: :create
 
+    def index
+        render json: session
+    end
+
     def create
         company = Company.find_by(company_name: params[:company_name])
         if company&.authenticate(params[:password])

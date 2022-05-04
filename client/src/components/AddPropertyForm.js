@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-function AddPropertyForm({ updateClientNewProperty }) {
+function AddPropertyForm({ updateClientNewProperty, currentCompany }) {
+    console.log(currentCompany)
+    
     const [address, setAddress] = useState('')
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
@@ -22,7 +24,7 @@ function AddPropertyForm({ updateClientNewProperty }) {
                 state: state, 
                 zip_code: zipCode,
                 amount_charged: amountCharged,
-                // company_id:
+                company_id: currentCompany.id,
             })
         })
         .then(res => res.json())

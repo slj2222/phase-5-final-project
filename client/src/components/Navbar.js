@@ -1,7 +1,18 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-function Navbar() {
+function Navbar({ onLogout, currentCompany}) {
+
+
+        function handleLogout() {
+            fetch("/logout", {
+                method: "DELETE",
+            }).then(() => {
+                onLogout();
+                // history.push('/')
+            });
+        }
+    
     return (
         
         <div className="navbar">
@@ -15,11 +26,19 @@ function Navbar() {
                     client list = not working
                 </div>
             </Link>
-            <Link to={"/invoice-list"}>
+            <Link to={"/invoices"}>
                 <div className="navbar-link">
                     invoices = not working
                 </div>
             </Link>
+            <div>
+                {currentCompany ? <></> : 
+                    <Link to={"/"}>
+                        <button onClick={handleLogout}>Log Out</button>
+                    </Link>
+                }
+            </div>
+            
         </div>
     )
 }

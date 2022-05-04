@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   
   get "/total-invoiced", to: "invoices#total_invoiced"
   post "/login", to: "sessions#create"
-  get "/auth", to: "companies#show"
+  get "/me", to: "companies#show"
+  delete "/logout", to: "sessions#destroy"
   post "/signup", to: "companies#create"
   
   
