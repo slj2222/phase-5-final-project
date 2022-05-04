@@ -7,10 +7,12 @@ import AddClientForm from "./AddClientForm"
 import EditClientForm from "./EditClientForm"
 import NewInvoiceForm from "./NewInvoiceForm"
 import AddPropertyForm from "./AddPropertyForm"
+import SignUp from "./SignUp"
 
 
 
 function MainContainer() {
+    const [currentCompany, setCurrentCompany] = useState('')
     const [invoiceList, setInvoiceList] = useState([])
     const [clientList, setClientList] = useState([])
     const [showClientProperties, setShowClientProperties] = useState([])
@@ -65,7 +67,7 @@ function MainContainer() {
     return(
         <div className="main-container">
             <Switch>
-                <Route exact path="/client-list">
+                <Route exact path="/clients">
                     <ClientListContainer 
                         clientList={clientList} 
                         updateDeleteClientList={updateDeleteClientList}
@@ -76,7 +78,7 @@ function MainContainer() {
                         invoiceList={invoiceList} 
                     />
                 </Route>
-                <Route exact path="/client-list/:id">
+                <Route exact path="/clients/:id">
                     <DetailClientContainer 
                     invoiceList={invoiceList} 
                         // showClientProperties={showClientProperties} 
@@ -96,10 +98,13 @@ function MainContainer() {
                         updateNewInvoiceList={updateNewInvoiceList}
                     />
                 </Route>
-                <Route exact path ="/client-list/:id/properties/new">
+                <Route exact path ="/clients/:id/properties/new">
                     <AddPropertyForm 
                     updateClientNewProperty={updateClientNewProperty} 
                     />
+                </Route>
+                <Route exact path ="/signup">
+                    <SignUp setCurrentCompany={setCurrentCompany}/>
                 </Route>
             </Switch>
         </div>

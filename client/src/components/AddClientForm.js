@@ -56,7 +56,7 @@ function AddClientForm({ updateNewClientList }) {
                         <input type="text" placeholder="phone number" onChange={(e) => setPhoneNumber(e.target.value)} />
                         <input type="text" placeholder="email address" onChange={(e) => setEmailAddress(e.target.value)} />
                         {/* for some reason the LINK is messing up the POST */}
-                        {/* <Link to={"/client-list"}> */}
+                        {/* <Link to={"/clients"}> */}
                             <input type="submit" value="submit" />
                         {/* </Link> */}
                     </form> 

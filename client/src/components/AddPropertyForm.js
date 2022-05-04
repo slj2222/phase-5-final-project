@@ -22,6 +22,7 @@ function AddPropertyForm({ updateClientNewProperty }) {
                 state: state, 
                 zip_code: zipCode,
                 amount_charged: amountCharged,
+                // company_id:
             })
         })
         .then(res => res.json())

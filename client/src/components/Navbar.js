@@ -10,7 +10,7 @@ function Navbar() {
                     this week = not working
                 </div>
             </Link>
-            <Link to={"/client-list"}>
+            <Link to={"/clients"}>
                 <div className="navbar-link">
                     client list = not working
                 </div>

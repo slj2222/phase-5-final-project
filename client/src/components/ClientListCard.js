@@ -23,7 +23,7 @@ function ClientListCard({ client, updateDeleteClientList }) {
     return (
         <div className="client-list-card">
             <div className="client-name">
-                <Link to={`/client-list/${client.id}`}>
+                <Link to={`/clients/${client.id}`}>
                     
                     <h5>{client.first_name} {client.last_name}</h5>
                     <h3>client id: {client.id}</h3>
