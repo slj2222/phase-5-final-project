@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
     def index 
         # byebug
         companyClients = Client.where(company_id: session[:company_id])
-        render json: companyClients
+        render json: companyClients, include: :invoices
     end
 
     def show

@@ -11,7 +11,7 @@ import Login from './components/Login';
 
 function App() {
   const [currentCompany, setCurrentCompany] = useState(null)
-  console.log(currentCompany)
+  // console.log(currentCompany)
 
 
 

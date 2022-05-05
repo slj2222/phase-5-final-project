@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 function InvoiceSimpleCard({ showClient, invoice }) {
     const [isPaid, setIsPaid] = useState(false)
-console.log(invoice)
+// console.log(invoice)
 
     
     // const { id } = useParams()

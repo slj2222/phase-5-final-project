@@ -28,7 +28,7 @@ function EditClientForm() {
         .then(res => res.json())
         .then(data =>{
             // setEditedClient(data)
-            console.log(data)
+            // console.log(data)
         })
         
         

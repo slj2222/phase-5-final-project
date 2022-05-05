@@ -3,7 +3,7 @@ import ClientListCard from "./ClientListCard";
 import { Link } from "react-router-dom";
 
 function ClientListContainer({ clientList, updateDeleteClientList, currentCompany }) {
-    console.log(currentCompany)
+    // console.log(currentCompany)
 
     const clientListMap = clientList.map(client => {
         return (

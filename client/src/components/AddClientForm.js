@@ -18,7 +18,7 @@ function AddClientForm({ updateNewClientList }) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log("test")
+        // console.log("test")
         fetch("/clients", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},

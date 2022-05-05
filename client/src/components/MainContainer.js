@@ -12,13 +12,19 @@ import Login from "./Login"
 
 
 function MainContainer({ currentCompany }) {
-    console.log(currentCompany)
+    // console.log(currentCompany)
     
     // const [currentCompany, setCurrentCompany] = useState('')
     const [invoiceList, setInvoiceList] = useState([])
     const [clientList, setClientList] = useState([])
     const [showClientProperties, setShowClientProperties] = useState([])
+    console.log(clientList)
+    console.log(invoiceList)
+
+
     
+
+
 
     // useEffect(()=>{
     //     fetch('/auth')
@@ -36,6 +42,16 @@ function MainContainer({ currentCompany }) {
         // })
     //   }, [])
 
+    // function mapClientInvoices(client) {
+        
+    //     client.invoices.map(invoice => setInvoiceList(invoice))
+    //     // clientInvoices = [...invoiceList, invoice]
+    // }
+
+    // function mapData(data) {
+    //     data.map(client => mapClientInvoices(client))
+    //     }
+
     useEffect(() => {
         fetch("/clients")
             .then(res => res.json())
@@ -43,20 +59,21 @@ function MainContainer({ currentCompany }) {
                 
                 // console.log(data)
                 setClientList(data)
-                console.log(data)
-            })
-    }, [])
-
-    useEffect(() => {
-        fetch("/invoices")
-            .then(res => res.json())
-            .then(data => {
+                // setInvoiceList(data.invoices)
                 
-                console.log(data)
-                setInvoiceList(data)
-
             })
     }, [])
+
+    // useEffect(() => {
+    //     fetch("/invoices")
+    //         .then(res => res.json())
+    //         .then(data => {
+                
+    //             console.log(data)
+    //             setInvoiceList(data)
+
+    //         })
+    // }, [])
 
 
     
@@ -79,8 +96,8 @@ function MainContainer({ currentCompany }) {
     function updateClientNewProperty(newProperty) {
         const newClientProperties = [...showClientProperties, newProperty]
         setShowClientProperties(newClientProperties)
-        console.log(newClientProperties)
-        console.log(showClientProperties)
+        // console.log(newClientProperties)
+        // console.log(showClientProperties)
     }
     
     
@@ -97,6 +114,7 @@ function MainContainer({ currentCompany }) {
                 </Route>
                 <Route exact path="/invoices">
                     <InvoicesContainer 
+                        clientList={clientList}
                         invoiceList={invoiceList}
                         currentCompany={currentCompany} 
                     />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 function AddPropertyForm({ updateClientNewProperty, currentCompany }) {
-    console.log(currentCompany)
+    // console.log(currentCompany)
     
     const [address, setAddress] = useState('')
     const [city, setCity] = useState('')
@@ -13,7 +13,7 @@ function AddPropertyForm({ updateClientNewProperty, currentCompany }) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(id)
+        // console.log(id)
         fetch(`/properties`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
