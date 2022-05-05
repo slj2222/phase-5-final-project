@@ -30,7 +30,7 @@ console.log(invoice)
             <div>{invoice.invoice_date}</div>
             <div>property id: {invoice.property_id} </div>
             <div>invoice amount: ${invoice.invoice_amount}</div>
-            <div>days since invoiced: {invoice.days_since_invoiced}</div>
+            {/* <div>days since invoiced: {invoice.days_since_invoiced}</div> */}
             {isPaid ? <div> paid </div> :
                 <div>
                     {invoice.collected ? <div> PAID </div> : 

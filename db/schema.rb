@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_05_03_194205) do
     t.string "email_address"
     t.float "total_invoiced"
     t.float "total_collected"
+    t.integer "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,7 +52,6 @@ ActiveRecord::Schema.define(version: 2022_05_03_194205) do
     t.string "address"
     t.string "city"
     t.string "state"
-    t.integer "company_id"
     t.integer "zip_code"
     t.float "amount_charged"
     t.integer "client_id"

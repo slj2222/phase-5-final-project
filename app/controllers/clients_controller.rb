@@ -1,7 +1,9 @@
 class ClientsController < ApplicationController
 
     def index 
-        render json: Client.all
+        # byebug
+        companyClients = Client.where(company_id: session[:company_id])
+        render json: companyClients
     end
 
     def show
@@ -29,6 +31,6 @@ class ClientsController < ApplicationController
     private
 
     def clientParams
-        params.permit(:first_name, :last_name, :phone_number, :email_address)
+        params.permit(:first_name, :last_name, :phone_number, :email_address, :company_id)
     end
 end

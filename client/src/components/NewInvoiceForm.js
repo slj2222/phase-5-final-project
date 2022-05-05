@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 function NewInvoiceForm({ updateNewInvoiceList }) {
     const [invoiceDate, setInvoiceDate] = useState('')
@@ -7,6 +7,8 @@ function NewInvoiceForm({ updateNewInvoiceList }) {
     const [propertyId, setPropertyId] = useState('')
     const [showClientProperties, setShowClientProperties] = useState([])
     const { id } = useParams()
+    // const history = useHistory()
+    
     
     useEffect(() => {
         fetch(`/clients/${id}`)
@@ -28,13 +30,16 @@ function NewInvoiceForm({ updateNewInvoiceList }) {
                 invoice_date: invoiceDate, 
                 invoice_amount: invoiceAmount, 
                 client_id: id,
-                property_id: propertyId,    
+                property_id: propertyId,
+                collected: false, 
+                invoiced: true,   
             })
         })
         .then(res => res.json())
         .then(data =>{
             updateNewInvoiceList(data)
             // console.log(data)
+            // history.push("/clients/:id")
         })
     }
     

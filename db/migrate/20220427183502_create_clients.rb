@@ -7,6 +7,7 @@ class CreateClients < ActiveRecord::Migration[6.1]
       t.string :email_address
       t.float :total_invoiced
       t.float :total_collected
+      t.integer :company_id
 
       t.timestamps
     end

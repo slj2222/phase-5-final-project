@@ -7,6 +7,7 @@ function PropertySimpleCard({ property }) {
             <div>{property.city}</div>
             <div>{property.state}</div>
             <div>{property.zip_code}</div>
+            <div>property id: {property.id}</div>
             <div>amount to charge: ${property.amount_charged}</div>
         </div>
     )

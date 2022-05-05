@@ -4,7 +4,7 @@ import ClientInfoCard from "./ClientInfoCard";
 import InvoiceSimpleCard from "./InvoiceSimpleCard";
 import PropertySimpleCard from "./PropertySimpleCard";
 
-function DetailClientContainer({ }) {
+function DetailClientContainer() {
     const [showClient, setShowClient] = useState([])
     // const [showClientProperty, setShowClientProperty] = useState([])
     const [showClientInvoices, setShowClientInvoices] = useState([])

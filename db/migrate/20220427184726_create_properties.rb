@@ -4,7 +4,6 @@ class CreateProperties < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :city
       t.string :state
-      t.integer :company_id
       t.integer :zip_code
       t.float :amount_charged
       t.integer :client_id

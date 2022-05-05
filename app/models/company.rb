@@ -1,6 +1,5 @@
 class Company < ApplicationRecord
-    has_many :properties
-    has_many :clients, through: :properties
+    has_many :clients
     has_secure_password
     validates :company_name, uniqueness: true
 

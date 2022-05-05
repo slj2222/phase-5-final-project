@@ -43,7 +43,7 @@ function MainContainer({ currentCompany }) {
                 
                 // console.log(data)
                 setClientList(data)
-                
+                console.log(data)
             })
     }, [])
 

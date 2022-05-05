@@ -28,7 +28,7 @@ class InvoicesController < ApplicationController
     private
 
     def invoiceParams
-        params.permit(:invoice_date, :invoice_amount, :client_id, :property_id)
+        params.permit(:invoice_date, :invoice_amount, :client_id, :property_id, :collected, :invoiced)
     end
 
     def updateInvoiceParams
